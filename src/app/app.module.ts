@@ -1,12 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+
+
+
+//modules
 import { PassengersModule } from './passengers/passengers.module';
 import { SharedModule } from './shared/shared.module';
 
 //Rutas
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
+
+
+
 
 
 
@@ -21,9 +28,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     PassengersModule,
     SharedModule,
-    AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

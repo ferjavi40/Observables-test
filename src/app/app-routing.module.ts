@@ -9,14 +9,18 @@ import { PasajeroComponent } from './passengers/pages/pasajero/pasajero.componen
 
 
 const routes: Routes = [
-  {path:'', component: HomeComponent, pathMatch: 'full'},
-  {path:'passengers', component: PassengersComponent},
+  {path:'', component: HomeComponent, pathMatch: 'full' },
+  {path:'pasajeros', component: PassengersComponent},
   {path: 'passenger/:id', component:PasajeroComponent},
-  {path: '**', redirectTo:''}
+  {path: '**',  redirectTo:''}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }

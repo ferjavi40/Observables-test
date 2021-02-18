@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+//routes
+import { AppRoutingModule } from '../app-routing.module';
+
+
 //components
 import { CardComponent } from './components/card/card.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -17,7 +21,14 @@ import { PasajeroComponent } from './pages/pasajero/pasajero.component';
     PasajeroComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
+  ],
+  exports:[
+    CardComponent,
+    HomeComponent,
+    PassengersComponent,
+    PasajeroComponent
   ]
 })
 export class PassengersModule { }

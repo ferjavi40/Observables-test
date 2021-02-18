@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import {DOCUMENT} from "@angular/common";
+import 'leader-line';
+declare let LeaderLine: any;
 
 @Component({
   selector: 'app-card',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  
 
-  ngOnInit(): void {
+  constructor(@Inject(DOCUMENT) private document) { }
+
+  ngOnInit() {
+    new LeaderLine(
+      this.document.getElementById('d1'),
+      this.document.getElementById('d2')
+    );
   }
 
 }

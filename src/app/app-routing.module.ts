@@ -11,7 +11,7 @@ import { PasajeroComponent } from './passengers/pages/pasajero/pasajero.componen
 const routes: Routes = [
   {path:'', component: HomeComponent, pathMatch: 'full' },
   {path:'pasajeros', component: PassengersComponent},
-  {path: 'passenger/:id', component:PasajeroComponent},
+  {path: 'passenger', component:PasajeroComponent},
   {path: '**',  redirectTo:''}
 ];
 

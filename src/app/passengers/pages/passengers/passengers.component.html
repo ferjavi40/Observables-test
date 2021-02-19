@@ -1,64 +1,30 @@
-<div class="card-deck">
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
+<h2 class="text-center m-5">Full List passengers</h2>
+
+
+
+<div class="container">
+
+
+    <div class="card-deck">
+        <div *ngFor="let pasajero of infoService.passengers" class="card">
+            <img [src]="pasajero.url" class="card-img-top" [alt]="pasajero.name">
+            <div class="card-body">
+                <h5 class="card-title">{{pasajero.name}}</h5>
+                <small class="form-text text-muted">Email</small>
+                <p class="card-text">{{pasajero.email}}</p>
+                <small class="form-text text-muted">Phone</small>
+                <p class="card-text">{{pasajero.phone}}</p>
+                <small class="form-text text-muted">Meeting</small>
+                <p class="card-text">{{pasajero.meetingStreet}}</p>
+                <small class="form-text text-muted">Final destination</small>
+                <p class="card-text">{{pasajero.finalDestination}}</p>
+            </div>
+            <button routerLink="home" type="button" class="btn btn-outline-primary p-3">See full description</button>
+            <div class="card-footer mt-3">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
         </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This card has even longer content than the first to show that equal height action.</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
+        <button routerLink="home" type="button" class="btn btn-outline-primary  btn-block m-5">Return home</button>
     </div>
 
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div>
-    <div class="card">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This card has even longer content than the first to show that equal height action.</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div>
 </div>
-
-<div class="container mt-5">
-    <button routerLink="home" type="button" class="btn btn-outline-primary btn-md btn-block">Return home</button>
-</div>
-
-
-
-

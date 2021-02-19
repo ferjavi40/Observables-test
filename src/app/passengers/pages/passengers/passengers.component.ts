@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { InfoPaginaService } from '../../services/info-pagina.service';
+import { PassengersInterface } from '../../interfaces/passengers';
+
 
 @Component({
   selector: 'app-passengers',
   templateUrl: './passengers.component.html',
   styleUrls: ['./passengers.component.css']
 })
-export class PassengersComponent implements OnInit {
+export class PassengersComponent {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(public infoService: InfoPaginaService) {
+
   }
+
 
 }

@@ -15,12 +15,14 @@ export class InfoPaginaService {
   info: DatosFjInterface = {};
   cargada = false;
 
-  passengers: PassengersInterface [] = [];
+  private apiUrl: string = 'https://test-observables-14aba-default-rtdb.europe-west1.firebasedatabase.app/passengers.json'
+  passengers: PassengersInterface[] = [];
 
 
   constructor(private http: HttpClient) {
     this.cargarInfo();
-    this.cargarPassengers();
+    // this.cargarPassengers();
+    this.getPassenger();
   }
 
   private cargarInfo() {
@@ -32,13 +34,15 @@ export class InfoPaginaService {
       });
   }
 
-  private cargarPassengers() {
-    //data from Firebase
-    this.http.get('https://test-observables-14aba-default-rtdb.europe-west1.firebasedatabase.app/passengers.json')
-        .subscribe((resp: PassengersInterface [] )=>{
-          this.passengers = resp;
-          console.log(resp);
-        });
+
+  private getPassenger() {
+    //data from firebase
+    this.http.get(this.apiUrl)
+      .subscribe((resp: PassengersInterface [] ) => {
+        this.passengers = resp;
+        console.log(resp);
+      });
+
   }
 
 

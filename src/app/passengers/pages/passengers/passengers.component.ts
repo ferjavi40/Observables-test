@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { InfoPaginaService } from '../../services/info-pagina.service';
+import { PasajerosService } from '../../services/pasajeros.service';
+
 import { PassengersInterface } from '../../interfaces/passengers';
 
 
@@ -11,7 +12,7 @@ import { PassengersInterface } from '../../interfaces/passengers';
 export class PassengersComponent {
 
 
-  constructor(public infoService: InfoPaginaService) {
+  constructor(public infoService: PasajerosService) {
 
   }
 

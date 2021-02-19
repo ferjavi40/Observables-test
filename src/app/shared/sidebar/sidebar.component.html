@@ -1,11 +1,4 @@
-<ul class="list-group text-center">
-    <li class="list-group-item"><strong>Passengers name record</strong></li>
-
-
-    <li routerLink="passenger" class="list-group-item list-group-item-primary zoom mt-2 mouse">Passenger 1</li>
-    <li routerLink="passenger" class="list-group-item list-group-item-primary zoom mt-2 mouse">Passenger 2</li>
-    <li routerLink="passenger" class="list-group-item list-group-item-primary zoom mt-2 mouse">Passenger 3</li>
-    <li routerLink="passenger" class="list-group-item list-group-item-primary zoom mt-2 mouse">Passenger 4</li>
-
-
+<li class="list-group-item text-center"><strong>Passengers name record</strong></li>
+<ul *ngFor="let pasa of pasajeroService.pasajeros" class="list-group text-center">
+    <li routerLink="passenger" class="list-group-item list-group-item-primary zoom mt-2 mouse">{{pasa.name}}</li>
 </ul>

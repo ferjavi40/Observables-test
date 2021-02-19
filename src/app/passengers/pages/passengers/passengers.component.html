@@ -6,7 +6,7 @@
 
 
     <div class="card-deck">
-        <div *ngFor="let pasajero of infoService.passengers" class="card">
+        <div *ngFor="let pasajero of infoService.pasajeros" class="card">
             <img [src]="pasajero.url" class="card-img-top" [alt]="pasajero.name">
             <div class="card-body">
                 <h5 class="card-title">{{pasajero.name}}</h5>

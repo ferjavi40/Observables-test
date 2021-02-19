@@ -25,7 +25,7 @@ export class PassengersComponent implements OnInit {
 
     this.ngxLoader.start();
     this.http.get(`https://api.npmjs.org/downloads/range/last-year/ngx-ui-loader`).subscribe((res: any) => {
-      console.log(res);
+      // console.log(res);
       this.ngxLoader.stop();
     });
   }

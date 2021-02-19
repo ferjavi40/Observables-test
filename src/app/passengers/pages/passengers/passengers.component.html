@@ -8,7 +8,7 @@
         <div class="card-deck">
 
             <div *ngFor="let pasajero of infoService.pasajeros" class="card">
-                <img [src]="pasajero.url" class="card-img-top" [alt]="pasajero.name">
+                <img [src]="pasajero.url" class="card-img-top zoom" [alt]="pasajero.name">
                 <div class="card-body">
                     <h5 class="card-title">{{pasajero.name}}</h5>
                     <small class="form-text text-muted">Email</small>
@@ -20,7 +20,7 @@
                     <small class="form-text text-muted">Final destination</small>
                     <p class="card-text">{{pasajero.finalDestination}}</p>
                 </div>
-                <button routerLink="home" type="button" class="btn btn-outline-primary p-3">See full description</button>
+                <button [routerLink]="['/pasajero', pasajero.id ]" type="button" class="btn btn-outline-primary p-3">See full description</button>
                 <div class="card-footer mt-3">
                     <small class="text-muted">Last updated 3 mins ago</small>
                 </div>

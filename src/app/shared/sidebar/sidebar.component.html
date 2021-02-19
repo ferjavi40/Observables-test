@@ -1,4 +1,4 @@
 <li class="list-group-item text-center"><strong>Passengers name record</strong></li>
 <ul *ngFor="let pasa of pasajeroService.pasajeros" class="list-group text-center">
-    <li routerLink="/pasajero" class="list-group-item list-group-item-primary zoom mt-2 mouse">{{pasa.name}}</li>
+    <li [routerLink]="['/pasajero', pasa.id ]" class="list-group-item list-group-item-primary zoom mt-2 mouse">{{pasa.name}}</li>
 </ul>

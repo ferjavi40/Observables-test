@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+//interface
 import { DatosFjInterface } from '../interfaces/interfaces';
 
 
@@ -18,7 +19,7 @@ export class InfoPaginaService {
       .subscribe((resp: DatosFjInterface) => {
         this.cargada = true;
         this.info=resp;
-        console.log(resp)
+        console.log(resp);
       });
 
 

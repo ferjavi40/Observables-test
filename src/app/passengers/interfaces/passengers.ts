@@ -4,6 +4,7 @@ export interface PassengersInterface {
     energy:           number;
     finalDestination: string;
     finalStreet:      string;
+    id:               string;
     location:         string;
     meetingPoint:     string;
     meetingStreet:    string;

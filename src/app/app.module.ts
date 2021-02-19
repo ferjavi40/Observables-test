@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 //services
 import { InfoPaginaService } from './passengers/services/info-pagina.service';
+//spinner
+import { NgxUiLoaderModule } from "ngx-ui-loader";
 
 
 //modules
@@ -28,7 +30,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     PassengersModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule
     
   ],
   providers: [

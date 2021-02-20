@@ -1,122 +1,126 @@
 <div *ngIf="pasajero" class="container vista">
 
-    <div class="card-header row justify-content-between">
+    <div ngxUiLoaderBlurred>
+        <div class="card-header row justify-content-between">
 
-        <div class="col-6">
-            <h5>Passenger Info</h5>
+            <div class="col-6">
+                <h5>Passenger Info</h5>
+            </div>
+    
+            <div class="col-6 custom-control custom-switch cursor ">
+                <input (click)="mostrarBoton()" type="checkbox" class="custom-control-input ml-auto" id="customSwitch1"
+                    checked="">
+                <label class="custom-control-label" for="customSwitch1">Hide Information</label>
+            </div>
+    
         </div>
-
-        <div class="col-6 custom-control custom-switch cursor ">
-            <input (click)="mostrarBoton()" type="checkbox" class="custom-control-input ml-auto" id="customSwitch1"
-                checked="">
-            <label class="custom-control-label" for="customSwitch1">Hide Information</label>
-        </div>
-
-    </div>
-
-    <div class="card-body">
-        <div class="container">
-            <div class="row">
-
-                <div class="col">
-                    <div class="row">
+    
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+    
+                    <div class="col">
                         <div class="row">
-                            <div class="col ">
-                                <img [src]="pasajero.url" class="rounded-circle mr-3" alt="pasajero"
-                                    style="height: 50px;">
+                            <div class="row">
+                                <div class="col ">
+                                    <img [src]="pasajero.url" class="rounded-circle mr-3" alt="pasajero"
+                                        style="height: 50px;">
+                                </div>
+                                <div class="col">
+                                    {{pasajero.name}}
+                                    <br>
+                                    <small>3 interaction</small>
+                                </div>
                             </div>
+    
+    
+                        </div>
+                        <div class="row">
+    
                             <div class="col">
-                                {{pasajero.name}}
-                                <br>
-                                <small>3 interaction</small>
+                                <p class="my-1 font-weight-bold">Email</p>
+                                {{pasajero.email}}
+                                <p class="my-1 font-weight-bold">Phone</p>
+                                {{pasajero.phone}}
+                                <p class="my-1 font-weight-bold">Location</p>
+                                {{pasajero.location}}
                             </div>
+    
                         </div>
-
-
                     </div>
-                    <div class="row">
-
-                        <div class="col">
-                            <p class="my-1 font-weight-bold">Email</p>
-                            {{pasajero.email}}
-                            <p class="my-1 font-weight-bold">Phone</p>
-                            {{pasajero.phone}}
-                            <p class="my-1 font-weight-bold">Location</p>
-                            {{pasajero.location}}
+    
+                    <div class="col">
+                        <h2>Payment:</h2>
+                        <div class="row">
+                            <div class="col"><i class="fab fa-cc-visa fa-7x zoom"></i></div>
+                            <div class="col"><i class="fab fa-cc-paypal fa-7x zoom"></i></div>
+    
                         </div>
-
+                        <div class="row">
+                            <div class="col"><i class="fab fa-cc-mastercard fa-7x zoom"></i></div>
+                            <div class="col"><i class="fab fa-apple-pay fa-7x zoom"></i></div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col">
-                    <h2>Payment:</h2>
-                    <div class="row">
-                        <div class="col"><i class="fab fa-cc-visa fa-7x zoom"></i></div>
-                        <div class="col"><i class="fab fa-cc-paypal fa-7x zoom"></i></div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col"><i class="fab fa-cc-mastercard fa-7x zoom"></i></div>
-                        <div class="col"><i class="fab fa-apple-pay fa-7x zoom"></i></div>
-                    </div>
-                </div>
+    
             </div>
-
-        </div>
-
-        <hr>
-
-        <div *ngIf="!mostrar" class="container text-center mt-4">
-
-            <div class="row">
-                <div class="col">
-                    <i id="d1" class="fas fa-check-circle fa-3x p-2"></i>
-                    <p>{{pasajero.location}}</p>
-                    <p>{{pasajero.meetingPoint}}</p>
-                </div>
-
-                <div class="col">
-                    <i id="d2" class="fas fa-map-marked-alt fa-3x p-2"></i>
-                    <p>{{pasajero.finalDestination}}</p>
-                    <p>{{pasajero.finalStreet}}</p>
-                </div>
-            </div>
+    
             <hr>
-            <div class="row">
-                <div class="col-md">
-                    {{pasajero.distance}} Km
-                    <br>
-                    <p class="font-weight-bold">Distance</p>
+    
+            <div *ngIf="!mostrar" class="container text-center mt-4">
+    
+                <div class="row">
+                    <div class="col">
+                        <i id="d1" class="fas fa-check-circle fa-3x p-2"></i>
+                        <p>{{pasajero.location}}</p>
+                        <p>{{pasajero.meetingPoint}}</p>
+                    </div>
+    
+                    <div class="col">
+                        <i id="d2" class="fas fa-map-marked-alt fa-3x p-2"></i>
+                        <p>{{pasajero.finalDestination}}</p>
+                        <p>{{pasajero.finalStreet}}</p>
+                    </div>
                 </div>
-                <div class="col-md">
-                    {{pasajero.time}} Min
-                    <br>
-                    <p class="font-weight-bold">Time</p>
+                <hr>
+                <div class="row">
+                    <div class="col-md">
+                        {{pasajero.distance}} Km
+                        <br>
+                        <p class="font-weight-bold">Distance</p>
+                    </div>
+                    <div class="col-md">
+                        {{pasajero.time}} Min
+                        <br>
+                        <p class="font-weight-bold">Time</p>
+                    </div>
+                    <div class="col-md">
+                        {{pasajero.price | currency}}
+                        <br>
+                        <p class="font-weight-bold">Price</p>
+                    </div>
+                    <div class="col-md">
+                        {{pasajero.energy}} kWh
+                        <br>
+                        <p class="font-weight-bold">Energy</p>
+                    </div>
                 </div>
-                <div class="col-md">
-                    {{pasajero.price | currency}}
-                    <br>
-                    <p class="font-weight-bold">Price</p>
+    
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col mt-5">
+                        <a routerLink="pasajeros" class="btn btn-outline-primary btn-lg">Return to Passengers</a>
+                    </div>
+                    <div class="col"></div>
+                    
                 </div>
-                <div class="col-md">
-                    {{pasajero.energy}} kWh
-                    <br>
-                    <p class="font-weight-bold">Energy</p>
-                </div>
+    
             </div>
-
-            <div class="row">
-                <div class="col"></div>
-                <div class="col mt-5">
-                    <a routerLink="pasajeros" class="btn btn-outline-primary btn-lg">Return to Passengers</a>
-                </div>
-                <div class="col"></div>
-                
-            </div>
-
+    
+            
         </div>
-
-        
     </div>
+
+
     
 </div>

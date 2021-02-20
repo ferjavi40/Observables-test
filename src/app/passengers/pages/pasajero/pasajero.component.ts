@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PasajerosService } from '../../services/pasajeros.service';
+import { HttpClient } from '@angular/common/http';
 //interfaces
 import { PasajeroIdInterface } from '../../interfaces/pasajero-id';
+//Loading
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 
 @Component({
@@ -23,7 +26,9 @@ export class PasajeroComponent implements OnInit {
 
 
   constructor( private route: ActivatedRoute,
-              public pasajeroService:PasajerosService ) { }
+              public pasajeroService:PasajerosService,
+              private http: HttpClient,
+              private ngxLoader: NgxUiLoaderService ) { }
 
   ngOnInit() {
 
@@ -36,6 +41,12 @@ export class PasajeroComponent implements OnInit {
                 console.log(this.pasajero);
               });
 
+    });
+
+    this.ngxLoader.start();
+    this.http.get(`https://api.npmjs.org/downloads/range/last-year/ngx-ui-loader`).subscribe((res: any) => {
+      // console.log(res);
+      this.ngxLoader.stop();
     });
 
   }

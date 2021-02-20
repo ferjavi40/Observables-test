@@ -17,6 +17,10 @@
     size: 8px;
 }
 
+.cursor{
+    cursor: pointer;
+}
+
 
 /* efecto hoover */
 .zoom {

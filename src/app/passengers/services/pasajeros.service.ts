@@ -25,4 +25,11 @@ export class PasajerosService {
           this.loading = false;
         });
   }
+
+  getPasajero( id:string ) {
+
+   return this.http.get(`https://test-observables-14aba-default-rtdb.europe-west1.firebasedatabase.app/pasajeroId/${ id }.json`);
+  }
+
+
 }

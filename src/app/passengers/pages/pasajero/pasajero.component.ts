@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PasajerosService } from '../../services/pasajeros.service';
+//interfaces
+import { PasajeroId } from '../../interfaces/pasajero-id';
+
 
 @Component({
   selector: 'app-pasajero',
@@ -19,7 +22,7 @@ export class PasajeroComponent implements OnInit {
       // console.log(parametros['id']);
 
       this.pasajeroService.getPasajero(parametros['id'])
-              .subscribe(pasajero => {
+              .subscribe((pasajero: PasajeroId) => {
                 console.log(pasajero);
               });
 

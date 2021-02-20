@@ -13,6 +13,14 @@ import { PasajeroIdInterface } from '../../interfaces/pasajero-id';
 export class PasajeroComponent implements OnInit {
 
   pasajero: PasajeroIdInterface;
+  mostrar: boolean;
+  
+  mostrarBoton(){
+    this.mostrar = !this.mostrar;
+  }
+
+
+
 
   constructor( private route: ActivatedRoute,
               public pasajeroService:PasajerosService ) { }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PasajerosService } from '../../services/pasajeros.service';
 //interfaces
-import { PasajeroId } from '../../interfaces/pasajero-id';
+import { PasajeroIdInterface } from '../../interfaces/pasajero-id';
 
 
 @Component({
@@ -12,6 +12,8 @@ import { PasajeroId } from '../../interfaces/pasajero-id';
 })
 export class PasajeroComponent implements OnInit {
 
+  pasajero: PasajeroIdInterface;
+
   constructor( private route: ActivatedRoute,
               public pasajeroService:PasajerosService ) { }
 
@@ -19,11 +21,11 @@ export class PasajeroComponent implements OnInit {
 
     this.route.params.subscribe(parametros =>{
 
-      // console.log(parametros['id']);
-
       this.pasajeroService.getPasajero(parametros['id'])
-              .subscribe((pasajero: PasajeroId) => {
-                console.log(pasajero);
+              .subscribe((dataPasajero: PasajeroIdInterface) => {
+                // console.log(dataPasajero);
+                this.pasajero= dataPasajero
+                console.log(this.pasajero);
               });
 
     });

@@ -1,4 +1,4 @@
-export interface PasajeroId {
+export interface PasajeroIdInterface {
     distance:         number;
     email:            string;
     energy:           number;

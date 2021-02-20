@@ -1,3 +1,100 @@
-<div class="vista">
-    <p>pasajero works!</p>
+<div *ngIf="pasajero" class="container vista">
+
+    <div class="card-header row justify-content-between">
+
+        <div class="col-6">
+            <h5>Passenger Info</h5>
+        </div>
+
+        <div class="col-6 custom-control custom-switch ">
+            <input type="checkbox" class="custom-control-input ml-auto" id="customSwitch1" checked="">
+            <label class="custom-control-label" for="customSwitch1">Hide Information</label>
+        </div>
+
+    </div>
+
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+
+                <div class="col">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col ">
+                                <img [src]="pasajero.url" class="rounded-circle mr-3" alt="pasajero"
+                                    style="height: 50px;">
+                            </div>
+                            <div class="col">
+                                {{pasajero.name}}
+                                <br>
+                                <small>3 interaction</small>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <p>Email</p>
+                        <br>
+                        {{pasajero.email}}
+                        
+                    </div>
+                    <div class="row">
+                        <p>Phone</p>
+                        <br>
+                        {{pasajero.phone}}
+                    </div>
+                    <div class="row">
+                        <p>Location</p>
+                        <br>
+                        {{pasajero.location}}
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col"><i class="fab fa-cc-visa fa-7x"></i></div>
+                        <div class="col"><i class="fab fa-cc-paypal fa-7x"></i></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col"><i class="fab fa-cc-mastercard fa-7x"></i></div>
+                        <div class="col"><i class="fab fa-apple-pay fa-7x"></i></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="container text-center mt-4">
+
+            <div class="row">
+                <div class="col">
+                    <i id="d1" class="fas fa-check-circle fa-3x p-2"></i>
+                    <p>Address</p>
+                    <p>Actual address</p>
+                </div>
+
+                <div class="col">
+                    <i id="d2" class="fas fa-map-marked-alt fa-3x p-2"></i>
+                    <p>Destination</p>
+                    <p>Actual destination</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md">Distance</div>
+                <div class="col-md">Time</div>
+                <div class="col-md">Price</div>
+                <div class="col-md">Energy</div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
 </div>

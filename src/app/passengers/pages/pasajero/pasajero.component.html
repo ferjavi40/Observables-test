@@ -34,32 +34,29 @@
 
                     </div>
                     <div class="row">
-                        <p>Email</p>
-                        <br>
-                        {{pasajero.email}}
-                        
-                    </div>
-                    <div class="row">
-                        <p>Phone</p>
-                        <br>
-                        {{pasajero.phone}}
-                    </div>
-                    <div class="row">
-                        <p>Location</p>
-                        <br>
-                        {{pasajero.location}}
+
+                        <div class="col">
+                            <p  class="my-1 font-weight-bold">Email</p>
+                            {{pasajero.email}}
+                            <p class="my-1 font-weight-bold">Phone</p>
+                            {{pasajero.phone}}
+                            <p class="my-1 font-weight-bold">Location</p>
+                            {{pasajero.location}}
+                        </div>
+
                     </div>
                 </div>
 
                 <div class="col">
+                    <h2>Payment:</h2>
                     <div class="row">
-                        <div class="col"><i class="fab fa-cc-visa fa-7x"></i></div>
-                        <div class="col"><i class="fab fa-cc-paypal fa-7x"></i></div>
+                        <div class="col"><i class="fab fa-cc-visa fa-7x zoom"></i></div>
+                        <div class="col"><i class="fab fa-cc-paypal fa-7x zoom"></i></div>
 
                     </div>
                     <div class="row">
-                        <div class="col"><i class="fab fa-cc-mastercard fa-7x"></i></div>
-                        <div class="col"><i class="fab fa-apple-pay fa-7x"></i></div>
+                        <div class="col"><i class="fab fa-cc-mastercard fa-7x zoom"></i></div>
+                        <div class="col"><i class="fab fa-apple-pay fa-7x zoom"></i></div>
                     </div>
                 </div>
             </div>
@@ -73,22 +70,38 @@
             <div class="row">
                 <div class="col">
                     <i id="d1" class="fas fa-check-circle fa-3x p-2"></i>
-                    <p>Address</p>
-                    <p>Actual address</p>
+                    <p>{{pasajero.location}}</p>
+                    <p>{{pasajero.meetingPoint}}</p>
                 </div>
 
                 <div class="col">
                     <i id="d2" class="fas fa-map-marked-alt fa-3x p-2"></i>
-                    <p>Destination</p>
-                    <p>Actual destination</p>
+                    <p>{{pasajero.finalDestination}}</p>
+                    <p>{{pasajero.finalStreet}}</p>
                 </div>
             </div>
             <hr>
             <div class="row">
-                <div class="col-md">Distance</div>
-                <div class="col-md">Time</div>
-                <div class="col-md">Price</div>
-                <div class="col-md">Energy</div>
+                <div class="col-md">
+                    {{pasajero.distance}} Km
+                    <br>
+                    <p class="font-weight-bold">Distance</p>
+                </div>
+                <div class="col-md">
+                    {{pasajero.time}} Min
+                    <br>
+                    <p class="font-weight-bold">Time</p>
+                </div>
+                <div class="col-md">
+                    {{pasajero.price | currency}}
+                    <br>
+                    <p class="font-weight-bold">Price</p>
+                </div>
+                <div class="col-md">
+                    {{pasajero.energy}} kWh
+                    <br>
+                    <p class="font-weight-bold">Energy</p>
+                </div>
             </div>
 
 

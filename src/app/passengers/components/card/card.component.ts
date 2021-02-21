@@ -29,7 +29,6 @@ export class CardComponent implements OnInit {
 
     this.sharedData.pasajero$.subscribe( data=>{
       this.pasajero = data;
-      console.log(data);
     });
 
   }

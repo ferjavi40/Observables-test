@@ -7,7 +7,38 @@
 }
 
 
+.vista{
+    height: 80vh;
+}
+
+
+.fa-map-marked-alt {
+    color: #5cb85c;
+}
+
+.fa-check-circle {
+    color: #0275d8;
+}
+
+
 #d1 {
 
     size: 8px;
+}
+
+.cursor{
+    cursor: pointer;
+}
+
+
+/* efecto hoover */
+.zoom {
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+    color: #0275d8;
+
 }

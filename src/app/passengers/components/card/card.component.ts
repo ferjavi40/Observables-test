@@ -1,7 +1,12 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import {DOCUMENT} from "@angular/common";
-import 'leader-line';
-declare let LeaderLine: any;
+import { Component,  OnInit } from '@angular/core';
+//services
+import { SharingDataService } from '../../services/sharing-data.service';
+//interfaces
+import { PasajeroIdInterface} from '../../interfaces/pasajero-id';
+
+
+
+
 
 @Component({
   selector: 'app-card',
@@ -10,15 +15,23 @@ declare let LeaderLine: any;
 })
 export class CardComponent implements OnInit {
 
+  mostrar: boolean;
   
+  mostrarBoton(){
+    this.mostrar = !this.mostrar;
+  }
 
-  constructor(@Inject(DOCUMENT) private document) { }
+  pasajero: PasajeroIdInterface;
+
+  constructor( private sharedData:SharingDataService ) { }
 
   ngOnInit() {
-    new LeaderLine(
-      this.document.getElementById('d1'),
-      this.document.getElementById('d2')
-    );
+
+    this.sharedData.pasajero$.subscribe( data=>{
+      this.pasajero = data;
+      console.log(data);
+    });
+
   }
 
 }

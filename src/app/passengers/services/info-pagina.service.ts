@@ -15,12 +15,10 @@ export class InfoPaginaService {
   info: DatosFjInterface = {};
   cargada = false;
 
-
-
   constructor(private http: HttpClient) {
     this.cargarInfo();
-    
-    
+
+
   }
 
   private cargarInfo() {

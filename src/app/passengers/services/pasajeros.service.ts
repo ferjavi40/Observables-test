@@ -10,7 +10,7 @@ export class PasajerosService {
 
   loading = true;
 
-  pasajeros: PassengersInterface [] = [];
+  pasajeros: PassengersInterface[] = [];
 
   private apiUrl: string = 'https://test-observables-14aba-default-rtdb.europe-west1.firebasedatabase.app/passengers.json'
 
@@ -20,15 +20,15 @@ export class PasajerosService {
 
   private cargarPasajeros() {
     this.http.get(this.apiUrl)
-        .subscribe((resp:PassengersInterface [] )=>{
-          this.pasajeros= resp;
-          this.loading = false;
-        });
+      .subscribe((resp: PassengersInterface[]) => {
+        this.pasajeros = resp;
+        this.loading = false;
+      });
   }
 
-  getPasajero( id:string ) {
+  getPasajero(id: string) {
 
-   return this.http.get(`https://test-observables-14aba-default-rtdb.europe-west1.firebasedatabase.app/pasajeroId/${ id }.json`);
+    return this.http.get(`https://test-observables-14aba-default-rtdb.europe-west1.firebasedatabase.app/pasajeroId/${id}.json`);
   }
 
 
